@@ -9,12 +9,14 @@ function Character( { character } ) { // ❗ Add the props
   }
 
   return (
-    <div onClick={toggleHomeworld}>
+    <div>
       {/* Use the same markup with the same attributes as in the mock */}
       <h3>{character.name}</h3>
-      <p >Planet:{character.homeworld.name}</p>
+
+      {/* Conditionally render the homeworld name */}
+      <p onClick={toggleHomeworld}>Planet: {showHomeworld ? character.homeworld.name : 'Click to show'}</p>
     </div>
-  )
+  );
 }
 
-export default Character
+export default Character;
